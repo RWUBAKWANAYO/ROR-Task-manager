@@ -1,0 +1,25 @@
+<%= link_to('Back to Home', controller: 'main', action: 'index')%><br/>
+<h1>Tasks</h1>
+<%= link_to('Add New Task', new_task_path)%><br/>
+<table class='tasks'>
+  <tr>
+    <th>#</th>
+    <th>Task</th>
+    <th>Completed</th>
+    <th>Category</th>
+    <th>Actions</th>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.position %></td>
+      <td><%= task.name %></td>
+      <td><%= task.completed ? 'Yes' : 'No' %></td>
+      <td><%= task.category&.name || '-' %></td>
+      <td>
+        <%= link_to('Show', task_path(task)) %>
+        <%= link_to('Edit', edit_task_path(task)) %>
+        <%= link_to('Delete', delete_task_path(task)) %>
+      </td>
+    </tr>
+  <%end%>
+</table>

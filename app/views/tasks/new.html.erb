@@ -1,0 +1,11 @@
+<%= link_to('Back To list', tasks_path)%>
+<div>
+  <h2>Create Task</h2>
+  <%= form_for(@task) do |f| %>
+    <% # url: tasks_path, method: 'post' %>
+    <%= render(partial: 'form', locals:{f:f})%>
+    <button>
+      <%= f.submit('Create Task')  %>
+    </button>
+  <%end%>
+</div>
