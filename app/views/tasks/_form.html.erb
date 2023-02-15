@@ -1,20 +1,20 @@
 <div class='inputs-cont'>
   <%= f.label(:name, 'Name')%>
-  <%= f.text_field(:name)%>
+  <%= f.text_field(:name, :required=>true )%>
 </div>
 <div class='inputs-cont'>
   <%= f.label(:position, 'Position')%>
-  <%= f.number_field(:position)%>
+  <%= f.number_field(:position , :required=>true )%>
 </div>
 
 <div class='inputs-cont select-cont'>
   <%= f.label(:category_id, 'Category')%>
-  <%= f.collection_select(:category_id, @categories, :id, :name)%>
+  <%= f.collection_select(:category_id, @categories, :id, :name, :required=>true )%>
 </div>
 
 <div class='inputs-cont textarea-cont'>
   <%= f.label(:description, 'Description')%>
-  <%= f.text_area(:description)%>
+  <%= f.text_area(:description, :required=>true )%>
 </div>
 
 <div class='checkbox-cont'>

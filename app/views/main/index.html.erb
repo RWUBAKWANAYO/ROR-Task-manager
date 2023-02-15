@@ -1,6 +1,6 @@
 <h1 class='title'>Task manager</h1>
 <div class='main-cont'>
-<%= link_to(categories_path) do %>
+<%= link_to(tasks_path) do %>
   <div class='main-card'>
     <%= image_tag 'tasks.png', :class=>'main-icons top-img' %>
     <%= image_tag 'arrow_icon.png' , :class=>'main-icons bottom-left-img' %>
@@ -11,7 +11,7 @@
     </div>
   </div>
   <%end%>
-  <%= link_to( tasks_path) do%>
+  <%= link_to( categories_path) do%>
   <div class='main-card'>
     <%= image_tag 'category.png', :class=>'main-icons top-img' %>
     <%= image_tag 'arrow_icon.png' , :class=>'main-icons bottom-left-img' %>

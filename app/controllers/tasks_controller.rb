@@ -3,7 +3,6 @@ class TasksController < ApplicationController
     @tasks = Task.order(:position)
   end
 
-
   def show
     @task = Task.find(params[:id])
   end
@@ -19,7 +18,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to(tasks_path)
     else
-      render("new")
+      render('new')
     end
   end
 
@@ -30,11 +29,11 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-  if @task.update(task_params)
-    redirect_to(tasks_path(@task))
-  else
-    render("edit")
-  end
+    if @task.update(task_params)
+      redirect_to(tasks_path(@task))
+    else
+      render('edit')
+    end
   end
 
   def delete
@@ -46,8 +45,9 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to(tasks_path)
   end
-  
+
   private
+
   def task_params
     params.require(:task).permit(:name, :description, :category_id, :position, :completed)
   end
