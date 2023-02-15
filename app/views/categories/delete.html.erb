@@ -1,2 +1,10 @@
-<h1>Categories#delete</h1>
-<p>Find me in app/views/categories/delete.html.erb</p>
+<%= link_to('Back to Categories', categories_path)%>
+<h1>Delete Category</h1>
+<%= form_for(@category, method:'delete') do |f|%>
+<% # url: category_path(@category), method: 'delete' %>
+<p>Are you sure you want to delete this Category?</p>
+<p><%= @category.name %></p>
+<button>
+  <%= f.submit('Delete Category')%>
+</button>
+<%end%>

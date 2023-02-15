@@ -1,2 +1,9 @@
-<h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+<%= link_to('Back to Category', categories_path)%>
+<h1>Edit Categories</h1>
+<%= form_for(@category) do |f| %>
+<% # url: category_path(@category), method: 'patch' %>
+  <%= render(partial: 'form', locals:{f:f}) %>
+  <button>
+    <%= f.submit('Update Category')%>
+  </buton>
+<%end%>
