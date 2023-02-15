@@ -1,11 +1,11 @@
-<%= link_to('Back To list', tasks_path)%>
-<div>
-  <h2>Edit Task</h2>
-  <%= form_for(@task) do |f| %>
+<div class='form-cont'>
+<div class='wrapper'>
+  <h1>Edit Task</h1>
+    <%= link_to('Back To list', tasks_path, :class=>'normal-link')%>
+</div>
+  <%= form_for(@task) do |f|%>
     <% # url: task_path(@task), method: 'patch' %>
     <%= render(partial: 'form', locals:{f:f})%>
-    <button>
-      <%= f.submit('Update Task') %>
-    </button>
+      <%= f.submit('Update Task',:class=>'submit-btn' )%>
   <%end%>
 </div>

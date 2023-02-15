@@ -1,9 +1,10 @@
-<%= link_to('Back to Categories', categories_path)%>
-<h1>New Category</h1>
-<%= form_for(@category) do |f| %>
-  <% # url: categories_path, method: 'post' %>
-  <%= render(partial: 'form', locals:{f:f}) %>
-  <button>
-    <%= f.submit('Create Category')%>
-  </buton>
-<%end%>
+<div class='form-cont'>
+  <div class='wrapper'>
+    <h1>New Category</h1>
+    <%= link_to('Back to Categories', categories_path, :class=>'normal-link')%>
+  </div>
+  <%= form_for(@category) do |f| %>
+    <% # url: categories_path, method: 'post' %>
+    <%= render(partial: 'form', locals:{f:f}) %>
+      <%= f.submit('Create Category', :class=>'submit-btn')%>
+  <%end%>

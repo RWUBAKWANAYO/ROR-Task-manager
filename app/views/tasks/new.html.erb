@@ -1,11 +1,11 @@
-<%= link_to('Back To list', tasks_path)%>
-<div>
-  <h2>Create Task</h2>
+<div class='form-cont'>
+  <div class='wrapper'>
+    <h1>Create Task</h1>
+    <%= link_to('Back To list', tasks_path, :class=>'normal-link')%>
+  </div>
   <%= form_for(@task) do |f| %>
     <% # url: tasks_path, method: 'post' %>
     <%= render(partial: 'form', locals:{f:f})%>
-    <button>
-      <%= f.submit('Create Task')  %>
-    </button>
+      <%= f.submit('Create Task', :class=>'submit-btn')  %>
   <%end%>
 </div>

@@ -1,20 +1,23 @@
-<div>
+<div class='inputs-cont'>
   <%= f.label(:name, 'Name')%>
   <%= f.text_field(:name)%>
 </div>
-<div>
+<div class='inputs-cont'>
   <%= f.label(:position, 'Position')%>
   <%= f.number_field(:position)%>
 </div>
-<div>
-  <%= f.label(:completed, 'Completed')%>
-  <%= f.check_box(:completed)%>
-</div>
-<div>
+
+<div class='inputs-cont select-cont'>
   <%= f.label(:category_id, 'Category')%>
   <%= f.collection_select(:category_id, @categories, :id, :name)%>
 </div>
-<div>
+
+<div class='inputs-cont textarea-cont'>
   <%= f.label(:description, 'Description')%>
   <%= f.text_area(:description)%>
+</div>
+
+<div class='checkbox-cont'>
+  <%= f.label(:completed, 'Completed')%>
+  <%= f.check_box(:completed)%>
 </div>
