@@ -1,20 +1,25 @@
 <div class='wrapper'>
-<%= link_to('Back to Home', root_path , :class=>'button normal-btn') %>
-<%= link_to('Add new Category', new_category_path , :class=>'button normal-btn')%>
+  <%= link_to('Back to Home', root_path , :class=>'button normal-btn') %>
+  <%= link_to('Add new Category', new_category_path , :class=>'button normal-btn')%>
 </div>
-<h1>List Of Categories</h1><br/>
-  <table class='tasks'>
-  <tr>
-    <th>Category</th>
-    <th>Actions</th>
-  </tr>
-<% @categories.each do |category| %>
-  <tr>
-    <td> <%= category.name%></td>
-    <td>
-      <%= link_to('Edit', edit_category_path(category), :class=>'button edit-btn') %>
-      <%= link_to('Delete', delete_category_path(category), :class=>'button delete-btn') %>
-    </td>
-  </tr>
-<%end%>
+<h1>List Of Categories</h1>
+<br/>
+<% if @categories.length > 0 %>
+  <table class='list-table'>
+    <tr>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+    <% @categories.each do |category| %>
+      <tr>
+        <td> <%= category.name%></td>
+        <td>
+          <%= link_to('Edit', edit_category_path(category), :class=>'button edit-btn') %>
+          <%= link_to('Delete', delete_category_path(category), :class=>'button delete-btn') %>
+        </td>
+      </tr>
+    <%end%>
   </table>
+<% else%>
+  <h3 class='not-found'>No Categories Found. &<br/> <%= link_to('Create one', new_category_path, :class=>'create-new' )%></h3>
+<% end %>

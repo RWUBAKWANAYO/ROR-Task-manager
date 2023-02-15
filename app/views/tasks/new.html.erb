@@ -3,9 +3,13 @@
     <h1>Create Task</h1>
     <%= link_to('Back To list', tasks_path, :class=>'normal-link')%>
   </div>
+  <% if @categories.length > 0%>
   <%= form_for(@task) do |f| %>
     <% # url: tasks_path, method: 'post' %>
     <%= render(partial: 'form', locals:{f:f})%>
       <%= f.submit('Create Task', :class=>'submit-btn')  %>
   <%end%>
+  <% else %>
+    <h3 class='not-found'>You need to create a category first. <br/> <%= link_to('Create one', new_category_path, :class=>'create-new' )%></h3>
+  <% end %>
 </div>

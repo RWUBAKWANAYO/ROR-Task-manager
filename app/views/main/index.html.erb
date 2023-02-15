@@ -1,6 +1,36 @@
-<h1>Task manager</h1>
-<p>This is application for managing a todo list</p>
-<%= link_to('Categories', categories_path) %> <br/>
-<%= link_to('Tasks', tasks_path(page: 1))%><br/>
-
-<%= link_to('About', action: 'about', page: 5, id: 20)%><br/>
+<h1 class='title'>Task manager</h1>
+<div class='main-cont'>
+<%= link_to(categories_path) do %>
+  <div class='main-card'>
+    <%= image_tag 'tasks.png', :class=>'main-icons top-img' %>
+    <%= image_tag 'arrow_icon.png' , :class=>'main-icons bottom-left-img' %>
+    <%= image_tag 'blue_icon.png' , :class=>'main-icons bottom-right-img' %>
+    <div class='main-content'>
+      <h5>Task List</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt eros id suscipit varius.</p>
+    </div>
+  </div>
+  <%end%>
+  <%= link_to( tasks_path) do%>
+  <div class='main-card'>
+    <%= image_tag 'category.png', :class=>'main-icons top-img' %>
+    <%= image_tag 'arrow_icon.png' , :class=>'main-icons bottom-left-img' %>
+    <%= image_tag 'yellow_icon.png' , :class=>'main-icons bottom-right-img' %>
+    <div class='main-content'>
+      <h5>Categories</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt eros id suscipit varius.</p>
+    </div>
+  </div>
+  <%end%>
+  <%= link_to( action: 'about') do%>
+  <div class='main-card'>
+    <%= image_tag 'about.png', :class=>'main-icons top-img' %>
+    <%= image_tag 'arrow_icon.png' , :class=>'main-icons bottom-left-img' %>
+    <%= image_tag 'red_icon.png' , :class=>'main-icons bottom-right-img' %>
+    <div class='main-content'>
+      <h5>About Author</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt eros id suscipit varius.</p>
+    </div>
+  </div>
+  <%end%>
+</div>

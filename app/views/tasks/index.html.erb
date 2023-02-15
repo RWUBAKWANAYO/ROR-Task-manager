@@ -2,8 +2,10 @@
   <%= link_to('Back to Home', {controller: 'main', action: 'index'}, :class=>'button normal-btn')%>
   <%= link_to('Add New Task', new_task_path, :class=>'button normal-btn')%>
 </div>
-  <h1>Tasks</h1><br/>
-<table class='tasks'>
+<h1>Tasks</h1>
+<br/>
+  <% if @tasks.length > 0  %>
+<table class='list-table'>
   <tr>
     <th>#</th>
     <th>Task</th>
@@ -11,17 +13,22 @@
     <th>Category</th>
     <th>Actions</th>
   </tr>
-  <% @tasks.each do |task| %>
-    <tr>
-      <td><%= task.position %></td>
-      <td><%= task.name %></td>
-      <td><%= task.completed ? 'Yes' : 'No' %></td>
-      <td><%= task.category&.name || '-' %></td>
-      <td>
-        <%= link_to('Show', task_path(task), :class=>'button show-btn' )%>
-        <%= link_to('Edit', edit_task_path(task), :class=>'button edit-btn') %>
-        <%= link_to('Delete', delete_task_path(task), :class=>'button delete-btn') %>
-      </td>
-    </tr>
-  <%end%>
+
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.position %></td>
+        <td><%= task.name %></td>
+        <td><%= task.completed ? 'Yes' : 'No' %></td>
+        <td><%= task.category&.name || '-' %></td>
+        <td>
+          <%= link_to('Show', task_path(task), :class=>'button show-btn' )%>
+          <%= link_to('Edit', edit_task_path(task), :class=>'button edit-btn') %>
+          <%= link_to('Delete', delete_task_path(task), :class=>'button delete-btn') %>
+        </td>
+      </tr>
+    <%end%>
+
 </table>
+<% else %>
+  <h3 class='not-found'>No Tasks Found. <br/> <%= link_to('Create one', new_task_path, :class=>'create-new' )%></h3>
+  <% end %>
