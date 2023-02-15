@@ -14,26 +14,59 @@
  *= require_self
  */
 
+ body,*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+ }
+ body{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+ }
+ section{max-width: 60%;margin: 50px 0;}
+ .wrapper{
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+ }
+
+ .wrapper h1{margin-right: auto;}
+ .wrapper a{margin-left: 2.5px;}
 
  .tasks {
-  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  font-size: 12px;
 }
 
 .tasks td, .tasks th {
-  border: 1px solid #ddd;
-  padding: 8px;
+  padding: 20px;
 }
 
-.tasks tr:nth-child(even){background-color: #f2f2f2;}
-
-.tasks tr:hover {background-color: #ddd;}
-
+.tasks tr{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+}
 .tasks th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color:  #008bba;
   color: white;
 }
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+.button:hover {opacity: 0.8;}
+
+.normal-btn {color: #008bba; border: 1px #008bba solid;} 
+.show-btn {background-color: #04aa6d4d; color: #04aa6d;} 
+.edit-btn {background-color: #008bba4d; color: #008bba;} 
+.delete-btn {background-color: #f443364d; color: #f44336;} 

@@ -1,6 +1,8 @@
-<%= link_to('Back to Home', controller: 'main', action: 'index')%><br/>
-<h1>Tasks</h1>
-<%= link_to('Add New Task', new_task_path)%><br/>
+<div class='wrapper'>
+  <h1>Tasks</h1>
+  <%= link_to('Back to Home', {controller: 'main', action: 'index'}, :class=>'button normal-btn')%>
+  <%= link_to('Add New Task', new_task_path, :class=>'button normal-btn')%>
+</div>
 <table class='tasks'>
   <tr>
     <th>#</th>
@@ -16,9 +18,9 @@
       <td><%= task.completed ? 'Yes' : 'No' %></td>
       <td><%= task.category&.name || '-' %></td>
       <td>
-        <%= link_to('Show', task_path(task)) %>
-        <%= link_to('Edit', edit_task_path(task)) %>
-        <%= link_to('Delete', delete_task_path(task)) %>
+        <%= link_to('Show', task_path(task), :class=>'button show-btn' )%>
+        <%= link_to('Edit', edit_task_path(task), :class=>'button edit-btn') %>
+        <%= link_to('Delete', delete_task_path(task), :class=>'button delete-btn') %>
       </td>
     </tr>
   <%end%>
