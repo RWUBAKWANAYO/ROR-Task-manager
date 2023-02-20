@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'Categories/delete', type: :feature do
   before do
-    @category = Category.create(name: 'category name');
+    @category = Category.create(name: 'category name')
     visit delete_category_path(@category)
   end
   context 'delete page' do

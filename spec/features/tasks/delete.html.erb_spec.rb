@@ -23,7 +23,6 @@ RSpec.describe 'Tasks/delete', type: :feature do
     it 'shows back button' do
       expect(page).to have_selector(:link_or_button, 'Back To list', exact: true)
     end
-
   end
   context 'delete task' do
     it 'go back to tasks' do

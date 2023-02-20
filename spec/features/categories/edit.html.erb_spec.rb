@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'Categories/edit', type: :feature do
   before do
-    @category = Category.create(name: 'category name');
+    @category = Category.create(name: 'category name')
     visit edit_category_path(@category)
   end
 
