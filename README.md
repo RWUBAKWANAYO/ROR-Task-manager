@@ -20,7 +20,7 @@ You need Ruby v3+, Rails v7+ and Postgresql installed on your machine.
   - Clone this repo locally using git in the command line with the following command
   
     ```ruby
-    > https://github.com/RWUBAKWANAYO/tractor-rental-backend.git
+    > git@github.com:RWUBAKWANAYO/ROR-Task-manager.git
     ```
   - Alternatively, you can just download the complete zip file and extract the folder in your directory
 
