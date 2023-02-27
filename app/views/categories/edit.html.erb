@@ -1,0 +1,11 @@
+<div class='form-cont'>
+  <div class='wrapper'>
+    <h1>Edit Categories</h1>
+    <%= link_to('Back to Categories', categories_path, :class=>'normal-link')%>
+  </div>
+  <%= form_for(@category) do |f| %>
+    <% # url: category_path(@category), method: 'patch' %>
+    <%= render(partial: 'form', locals:{f:f}) %>
+      <%= f.submit('Update Category',:class=>'submit-btn' )%>
+  <%end%>
+</div>

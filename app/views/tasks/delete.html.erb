@@ -1,0 +1,10 @@
+<div class='delete-cont'>
+  <h1>Delete Task</h1>
+  <%= form_for(@task, method: 'delete') do |f| %>
+    <% # url: task_path(@task), method: 'patch' %>
+    <p>Are you sure you want to delete this Tasks?</p>
+    <h4><%= @task.name %></h4>
+    <%= f.submit('Delete Task', :class=>'delete-cont-btn delete-submit-btn') %>
+    <%= link_to('Back To list', tasks_path, :class=>'delete-cont-btn delete-back-btn')%>
+  <%end%>
+</div>

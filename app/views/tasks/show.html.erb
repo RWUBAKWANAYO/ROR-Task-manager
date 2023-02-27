@@ -1,0 +1,35 @@
+
+<div class='wrapper'>
+  <%= link_to('Back to Tasks', tasks_path, :class=>'button normal-btn')%>
+  <%= link_to('Edit', edit_task_path(@task), :class=>'button edit-btn') %>
+  <%= link_to('Delete',  delete_task_path(@task), :class=>'button delete-btn') %>
+</div>
+<h1>Task Details</h1>
+<br/>
+<table class='list-table'>
+  <tr>
+    <td>Task Name</td>
+    <td><%= @task.name %></td>
+  </tr>
+  <tr>
+    <td>Position</td>
+    <td><%= @task.position %></td>
+  </tr>
+  <tr>
+    <td>Completed</td>
+    <td><%= @task.completed ? 'Yes' : 'No' %></td>
+  </tr>
+  <tr>
+    <td>Category</td>
+    <td><%= @task.category&.name || '-' %></td>
+  </tr>
+  <tr>
+    <td>Created At</td>
+    <td><%= @task.created_at%></td>
+  </tr>
+  <tr>
+    <td>Updated At</td>
+    <td><%= @task.updated_at %></td>
+  </tr>
+</table>
+</div>

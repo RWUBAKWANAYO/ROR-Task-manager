@@ -1,0 +1,10 @@
+<div class='delete-cont'>
+  <h1>Delete Category</h1>
+  <%= form_for(@category, method:'delete') do |f|%>
+    <% # url: category_path(@category), method: 'delete' %>
+    <p>Are you sure you want to delete this Category?</p>
+    <h4><%= @category.name %></h4>
+    <%= f.submit('Delete Category', :class=>'delete-cont-btn delete-submit-btn')%>
+    <%= link_to('Back to Categories', categories_path, :class=>'delete-cont-btn delete-back-btn')%>
+  <%end%>
+</div>
